@@ -1,5 +1,5 @@
-name: yaru_example
-description: Demonstrates Yaru theming
+name: yarucinnamon_example
+description: Demonstrates Yaru Cinnamon theming
 publish_to: 'none'
 version: 1.0.0
 
@@ -9,7 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  yaru:
+  yarucinnamon:
     path: ../
 
 dev_dependencies:

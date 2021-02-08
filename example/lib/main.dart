@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:yaru/yaru.dart';
+import 'package:yarucinnamon/yarucinnamon.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,21 +11,21 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  var theme = yaruTheme;
+  var theme = yarucinnamonTheme;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Yaru Example',
+      title: 'Yaru-Cinnamon Example',
       theme: theme,
       home: MyHomePage(
           themeChanged: (themeName) => setState(() {
-                if (themeName == 'Yaru') {
-                  theme = yaruTheme;
-                } else if (themeName == 'Yaru-light') {
-                  theme = yaruLightTheme;
-                } else if (themeName == 'Yaru-dark') {
-                  theme = yaruDarkTheme;
+                if (themeName == 'Yaru-Cinnamon') {
+                  theme = yarucinnamonTheme;
+                } else if (themeName == 'Yaru-Cinnamon-light') {
+                  theme = yarucinnamonLightTheme;
+                } else if (themeName == 'Yaru-Cinnamon-dark') {
+                  theme = yarucinnamonDarkTheme;
                 }
               })),
     );
@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final textController = TextEditingController(
       text:
           'My code fails, I do not know why.\nMy code works, I do not know why.\nText in other scripts: Tamaziɣt Taqbaylit, 中文(简体), Čeština, Беларуская, Ελληνικά, עברית, Русский, བོད་ཡིག, Norsk bokmål.');
-  var themeName = 'Yaru';
+  var themeName = 'Yaru-Cinnamon';
   final void Function(String themeName) themeChanged;
 
   _MyHomePageState(this.themeChanged);
@@ -63,10 +63,10 @@ class _MyHomePageState extends State<MyHomePage> {
               });
             },
             itemBuilder: (context) => <PopupMenuItem<String>>[
-                  PopupMenuItem(value: 'Yaru', child: const Text('Standard')),
+                  PopupMenuItem(value: 'Yaru-Cinnamon', child: const Text('Standard')),
                   PopupMenuItem(
-                      value: 'Yaru-light', child: const Text('Light')),
-                  PopupMenuItem(value: 'Yaru-dark', child: const Text('Dark')),
+                      value: 'Yaru-Cinnamon-light', child: const Text('Light')),
+                  PopupMenuItem(value: 'Yaru-Cinnamon-dark', child: const Text('Dark')),
                 ]),
       ),
       body: Center(
@@ -279,88 +279,88 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               width: 250.0,
               height: 50.0,
-              color: yaruUbuntuOrange,
+              color: yarucinnamonUbuntuOrange,
               child: Center(
-                  child: Text('yaruUbuntuOrange',
+                  child: Text('yarucinnamonUbuntuOrange',
                       style: TextStyle(
-                          color: yaruWhite,
+                          color: yarucinnamonWhite,
                           fontSize: 22,
                           fontWeight: FontWeight.w300))),
             ),
             Container(
               width: 250.0,
               height: 50.0,
-              color: yaruLightAubergine,
+              color: yarucinnamonLightAubergine,
               child: Center(
-                  child: Text('yaruLightAubergine',
+                  child: Text('yarucinnamonLightAubergine',
                       style: TextStyle(
-                          color: yaruWhite,
+                          color: yarucinnamonWhite,
                           fontSize: 22,
                           fontWeight: FontWeight.w300))),
             ),
             Container(
               width: 250.0,
               height: 50.0,
-              color: yaruMidAubergine,
+              color: yarucinnamonMidAubergine,
               child: Center(
-                  child: Text('yaruMidAubergine',
+                  child: Text('yarucinnamonMidAubergine',
                       style: TextStyle(
-                          color: yaruWhite,
+                          color: yarucinnamonWhite,
                           fontSize: 22,
                           fontWeight: FontWeight.w300))),
             ),
             Container(
               width: 250.0,
               height: 50.0,
-              color: yaruDarkAubergine,
+              color: yarucinnamonDarkAubergine,
               child: Center(
-                  child: Text('yaruDarkAubergine',
+                  child: Text('yarucinnamonDarkAubergine',
                       style: TextStyle(
-                          color: yaruWhite,
+                          color: yarucinnamonWhite,
                           fontSize: 22,
                           fontWeight: FontWeight.w300))),
             ),
             Container(
               width: 250.0,
               height: 50.0,
-              color: yaruCanonicalAubergine,
+              color: yarucinnamonCanonicalAubergine,
               child: Center(
-                  child: Text('yaruCanonicalAubergine',
+                  child: Text('yarucinnamonCanonicalAubergine',
                       style: TextStyle(
-                          color: yaruWhite,
+                          color: yarucinnamonWhite,
                           fontSize: 22,
                           fontWeight: FontWeight.w300))),
             ),
             Container(
               width: 250.0,
               height: 50.0,
-              color: yaruWarmGrey,
+              color: yarucinnamonWarmGrey,
               child: Center(
-                  child: Text('yaruWarmGrey',
+                  child: Text('yarucinnamonWarmGrey',
                       style: TextStyle(
-                          color: yaruTextGrey,
+                          color: yarucinnamonTextGrey,
                           fontSize: 22,
                           fontWeight: FontWeight.w300))),
             ),
             Container(
               width: 250.0,
               height: 50.0,
-              color: yaruCoolGrey,
+              color: yarucinnamonCoolGrey,
               child: Center(
-                  child: Text('yaruCoolGrey',
+                  child: Text('yarucinnamonCoolGrey',
                       style: TextStyle(
-                          color: yaruWhite,
+                          color: yarucinnamonWhite,
                           fontSize: 22,
                           fontWeight: FontWeight.w300))),
             ),
             Container(
               width: 250.0,
               height: 50.0,
-              color: yaruTextGrey,
+              color: yarucinnamonTextGrey,
               child: Center(
-                  child: Text('yaruTextGrey',
+                  child: Text('yarucinnamonTextGrey',
                       style: TextStyle(
-                          color: yaruWhite,
+                          color: yarucinnamonWhite,
                           fontSize: 22,
                           fontWeight: FontWeight.w300))),
             ),

@@ -1,9 +1,9 @@
-[![Pub Package](https://img.shields.io/pub/v/yaru.svg)](https://pub.dev/packages/yaru)
+[![Pub Package](https://img.shields.io/pub/v/yarucinnamon.svg)](https://pub.dev/packages/yarucinnamon)
 
-Ubuntu [Yaru](https://github.com/ubuntu/yaru) theme.
+Ubuntu [Yaru Cinnamon](https://github.com/Ubuntu-Cinnamon-Remix/yaru-cinnamon) theme.
 
-![Example app using Yaru theme](screenshot.png)
+![Example app using Yaru Cinnamon theme](screenshot.png)
 
-## Contributing to yaru.dart
+## Contributing to yarucinnamon.dart
 
 We welcome contributions! See the [contribution guide](CONTRIBUTING.md) for more details.

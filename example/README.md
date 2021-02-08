@@ -1,4 +1,3 @@
-# yaru_test
+# yarucinnamon_test
 
-Demonstrates Yaru theming.
-
+Demonstrates Yaru Cinnamon theming.

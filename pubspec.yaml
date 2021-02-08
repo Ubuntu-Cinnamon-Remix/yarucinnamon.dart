@@ -1,9 +1,9 @@
-name: yaru
+name: yarucinnamon
 version: 0.0.0-dev.5
 
-description: Ubuntu Yaru theme
+description: Ubuntu Yaru Cinnamon theme
 
-homepage: https://github.com/canonical/yaru.dart
+homepage: https://github.com/Ubuntu-Cinnamon-Remix/yarucinnamon.dart
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -17,45 +17,45 @@ flutter:
   fonts:
     - family: Ubuntu
       fonts:
-        - asset: packages/yaru/fonts/Ubuntu-L.ttf
+        - asset: packages/yarucinnamon/fonts/Ubuntu-L.ttf
           weight: 300
-        - asset: packages/yaru/fonts/Ubuntu-LI.ttf
+        - asset: packages/yarucinnamon/fonts/Ubuntu-LI.ttf
           weight: 300
           style: italic
-        - asset: packages/yaru/fonts/Ubuntu-R.ttf
+        - asset: packages/yarucinnamon/fonts/Ubuntu-R.ttf
           weight: 400
-        - asset: packages/yaru/fonts/Ubuntu-RI.ttf
+        - asset: packages/yarucinnamon/fonts/Ubuntu-RI.ttf
           weight: 400
           style: italic
-        - asset: packages/yaru/fonts/Ubuntu-M.ttf
+        - asset: packages/yarucinnamon/fonts/Ubuntu-M.ttf
           weight: 500
-        - asset: packages/yaru/fonts/Ubuntu-MI.ttf
+        - asset: packages/yarucinnamon/fonts/Ubuntu-MI.ttf
           weight: 500
           style: italic
-        - asset: packages/yaru/fonts/Ubuntu-B.ttf
+        - asset: packages/yarucinnamon/fonts/Ubuntu-B.ttf
           weight: 700
-        - asset: packages/yaru/fonts/Ubuntu-BI.ttf
+        - asset: packages/yarucinnamon/fonts/Ubuntu-BI.ttf
           weight: 700
           style: italic
     - family: Noto Sans CJK
       fonts:
-        - asset: packages/yaru/fonts/NotoSansCJK-Regular.ttc
+        - asset: packages/yarucinnamon/fonts/NotoSansCJK-Regular.ttc
           weight: 300
-        - asset: packages/yaru/fonts/NotoSansCJK-Bold.ttc
+        - asset: packages/yarucinnamon/fonts/NotoSansCJK-Bold.ttc
           weight: 700
     - family: Tibetan Machine Uni
       fonts:
-        - asset: packages/yaru/fonts/TibetanMachineUni.ttf
+        - asset: packages/yarucinnamon/fonts/TibetanMachineUni.ttf
           weight: 300
     - family: Liberation Serif
       fonts:
-        - asset: packages/yaru/fonts/LiberationSerif-Regular.ttf
+        - asset: packages/yarucinnamon/fonts/LiberationSerif-Regular.ttf
           weight: 300
-        - asset: packages/yaru/fonts/LiberationSerif-Italic.ttf
+        - asset: packages/yarucinnamon/fonts/LiberationSerif-Italic.ttf
           weight: 300
           style: italic
-        - asset: packages/yaru/fonts/LiberationSerif-Bold.ttf
+        - asset: packages/yarucinnamon/fonts/LiberationSerif-Bold.ttf
           weight: 700
-        - asset: packages/yaru/fonts/LiberationSerif-BoldItalic.ttf
+        - asset: packages/yarucinnamon/fonts/LiberationSerif-BoldItalic.ttf
           weight: 700
           style: italic
