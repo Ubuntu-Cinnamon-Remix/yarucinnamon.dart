@@ -221,10 +221,16 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Row(
                       children: <Widget>[
-                        Switch(value: true),
+                        Switch(
+                          value: true,
+                          onChanged: null,
+                        ),
                         const Text('Disabled'),
                       ],
                     ),
+                    Row(
+                      children: <Widget>[CircularProgressIndicator()],
+                    )
                   ],
                 ),
                 Column(
@@ -247,7 +253,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Radio(
                           value: 3,
                           groupValue: 1,
-                          onChanged: (int value) {},
+                          onChanged: null,
                         ),
                         const Text('Disabled'),
                       ],

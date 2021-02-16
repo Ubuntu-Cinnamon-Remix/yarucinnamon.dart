@@ -15,8 +15,12 @@ final yarucinnamonWarmGrey = Color(0xFFAEA79F);
 final yarucinnamonCoolGrey = Color(0xFF333333);
 final yarucinnamonTextGrey = Color(0xFF111111);
 final yarucinnamonCanonicalAubergine = Color(0xFF772953);
-
 final yarucinnamonErrorColor = Color(0xFFFF0000);
+
+// more colors, as the canonical palette is not enough
+final yarucinnamonGreen = Color(0xFF109a26);
+final yarucinnamonDisabledGreyDark = Color(0xFF535353);
+final yarucinnamonMidAubergineTransparentized = Color(0xAA5E2750);
 
 final yarucinnamonLightColorScheme = ColorScheme.fromSwatch(
     // NOTE(robert-ancell): Light shades from 'Tint' on website, dark shades calculated.
@@ -33,7 +37,7 @@ final yarucinnamonLightColorScheme = ColorScheme.fromSwatch(
       900: Color(0xFF2F1106),
     }),
     primaryColorDark: yarucinnamonCoolGrey,
-    accentColor: yarucinnamonUbuntuOrange,
+    accentColor: yarucinnamonLightAubergine,
     cardColor: yarucinnamonWhite,
     backgroundColor: yarucinnamonWhite,
     errorColor: yarucinnamonErrorColor,
@@ -54,7 +58,7 @@ final yarucinnamonDarkColorScheme = ColorScheme.fromSwatch(
       900: Color(0xFF2F1106),
     }),
     primaryColorDark: yarucinnamonCoolGrey,
-    accentColor: yarucinnamonUbuntuOrange,
+    accentColor: yarucinnamonLightAubergine,
     cardColor: yarucinnamonCoolGrey,
     backgroundColor: yarucinnamonCoolGrey,
     errorColor: yarucinnamonErrorColor,
@@ -99,7 +103,7 @@ final yarucinnamonTextTheme = TextTheme(
     overline: yarucinnamonOverlineStyle);
 
 final yarucinnamonButtonThemeData = ButtonThemeData(
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)));
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)));
 
 final yarucinnamonOutlinedButtonThemeData = OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(primary: yarucinnamonTextGrey));
@@ -142,10 +146,11 @@ final yarucinnamonTheme = ThemeData(
     dialogBackgroundColor: yarucinnamonLightColorScheme.background,
     errorColor: yarucinnamonLightColorScheme.error,
     textTheme: yarucinnamonTextTheme,
-    indicatorColor: yarucinnamonLightColorScheme.onPrimary,
+    indicatorColor: yarucinnamonLightColorScheme.secondary,
     applyElevationOverlayColor: false,
     colorScheme: yarucinnamonLightColorScheme,
     buttonTheme: yarucinnamonButtonThemeData,
+    elevatedButtonTheme: elevatedButtonThemeDataLight,
     outlinedButtonTheme: yarucinnamonOutlinedButtonThemeData,
     appBarTheme: yarucinnamonAppBarDarkTheme);
 
@@ -166,18 +171,19 @@ final yarucinnamonLightTheme = ThemeData(
     dialogBackgroundColor: yarucinnamonLightColorScheme.background,
     errorColor: yarucinnamonLightColorScheme.error,
     textTheme: yarucinnamonTextTheme,
-    indicatorColor: yarucinnamonLightColorScheme.onPrimary,
+    indicatorColor: yarucinnamonLightColorScheme.secondary,
     applyElevationOverlayColor: false,
     colorScheme: yarucinnamonLightColorScheme,
     buttonTheme: yarucinnamonButtonThemeData,
+    elevatedButtonTheme: elevatedButtonThemeDataLight,
     outlinedButtonTheme: yarucinnamonOutlinedButtonThemeData,
     appBarTheme: yarucinnamonAppBarLightTheme);
 
 final yarucinnamonDarkTheme = ThemeData(
     brightness: Brightness.dark,
-    primaryColor: yarucinnamonDarkColorScheme.surface,
+    primaryColor: yarucinnamonDarkColorScheme.primary,
     primaryColorBrightness:
-        ThemeData.estimateBrightnessForColor(yarucinnamonDarkColorScheme.surface),
+        ThemeData.estimateBrightnessForColor(yarucinnamonDarkColorScheme.primary),
     canvasColor: yarucinnamonDarkColorScheme.background,
     accentColor: yarucinnamonDarkColorScheme.secondary,
     accentColorBrightness:
@@ -190,9 +196,116 @@ final yarucinnamonDarkTheme = ThemeData(
     dialogBackgroundColor: yarucinnamonDarkColorScheme.background,
     errorColor: yarucinnamonDarkColorScheme.error,
     textTheme: yarucinnamonTextTheme,
-    indicatorColor: yarucinnamonDarkColorScheme.onPrimary,
+    indicatorColor: yarucinnamonDarkColorScheme.secondary,
     applyElevationOverlayColor: true,
     colorScheme: yarucinnamonDarkColorScheme,
     buttonTheme: yarucinnamonButtonThemeData,
+    elevatedButtonTheme: elevatedButtonThemeDataDark,
     outlinedButtonTheme: yarucinnamonDarkOutlinedButtonThemeData,
+    switchTheme: switchStyleDark,
+    checkboxTheme: checkStyle,
+    radioTheme: radioStyle,
+    primaryColorDark: yarucinnamonUbuntuOrange,
     appBarTheme: yarucinnamonAppBarDarkTheme);
+
+    // Special casing some widgets
+    // That are not catched with the default theming in flutter
+    // "Green" elevated Buttons
+    Color getElevatedButtonColorLight(Set<MaterialState> states) {
+      const Set<MaterialState> interactiveStates = <MaterialState>{
+        MaterialState.pressed,
+        MaterialState.hovered,
+        MaterialState.focused,
+      };
+      const Set<MaterialState> disabledStates = <MaterialState>{
+        MaterialState.disabled
+      };
+      if (states.any(interactiveStates.contains)) {
+        return yarucinnamonGreen;
+      } else if (states.any(disabledStates.contains)) {
+        return yarucinnamonWarmGrey;
+      }
+      return yarucinnamonGreen;
+    }
+
+    Color getElevatedButtonColorDark(Set<MaterialState> states) {
+      const Set<MaterialState> interactiveStates = <MaterialState>{
+        MaterialState.pressed,
+        MaterialState.hovered,
+        MaterialState.focused,
+      };
+      const Set<MaterialState> disabledStates = <MaterialState>{
+        MaterialState.disabled
+      };
+      if (states.any(interactiveStates.contains)) {
+        return yarucinnamonGreen;
+      } else if (states.any(disabledStates.contains)) {
+        return yarucinnamonDisabledGreyDark;
+      }
+      return yarucinnamonGreen;
+    }
+
+    final elevatedButtonThemeDataLight = ElevatedButtonThemeData(
+        style: ButtonStyle(
+            backgroundColor:
+                MaterialStateProperty.resolveWith(getElevatedButtonColorLight)));
+
+    final elevatedButtonThemeDataDark = ElevatedButtonThemeData(
+        style: ButtonStyle(
+            backgroundColor:
+                MaterialStateProperty.resolveWith(getElevatedButtonColorDark)));
+
+    // Switches
+    Color getSwitchThumbColorDark(Set<MaterialState> states) {
+      if (states.contains(MaterialState.disabled)) {
+        return yarucinnamonWarmGrey;
+      } else {
+        if (states.contains(MaterialState.selected)) {
+          return yarucinnamonMidAubergine;
+        } else {
+          return yarucinnamonWhite;
+        }
+      }
+    }
+
+    Color getSwitchTrackColorDark(Set<MaterialState> states) {
+      if (states.contains(MaterialState.disabled)) {
+        return yarucinnamonDisabledGreyDark;
+      } else {
+        if (states.contains(MaterialState.selected)) {
+          return yarucinnamonMidAubergineTransparentized;
+        } else {
+          return yarucinnamonWarmGrey;
+        }
+      }
+    }
+
+    final switchStyleDark = SwitchThemeData(
+        thumbColor: MaterialStateProperty.resolveWith(getSwitchThumbColorDark),
+        trackColor: MaterialStateProperty.resolveWith(getSwitchTrackColorDark));
+
+    // Checks
+    Color getCheckFillColorDark(Set<MaterialState> states) {
+      if (!states.contains(MaterialState.disabled)) {
+        if (states.contains(MaterialState.selected)) {
+          return yarucinnamonLightAubergine;
+        }
+        return yarucinnamonWarmGrey;
+      }
+      return yarucinnamonDisabledGreyDark;
+    }
+
+    Color getCheckColorDark(Set<MaterialState> states) {
+      if (!states.contains(MaterialState.disabled)) {
+        return yarucinnamonWhite;
+      }
+      return yarucinnamonWarmGrey;
+    }
+
+    final checkStyle = CheckboxThemeData(
+        fillColor: MaterialStateProperty.resolveWith(getCheckFillColorDark),
+        checkColor: MaterialStateProperty.resolveWith(getCheckColorDark));
+
+    // Radios
+    final radioStyle = RadioThemeData(
+        fillColor: MaterialStateProperty.resolveWith(getCheckFillColorDark));
