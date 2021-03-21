@@ -4,7 +4,7 @@
 
 * Initial prerelease
 
-## 0.0.9-dev
+## 0.0.0-dev.9
 
 * [Joshua Peisach](https://github.com/ItzSwirlz)
   * Initial yarucinnamon branch
