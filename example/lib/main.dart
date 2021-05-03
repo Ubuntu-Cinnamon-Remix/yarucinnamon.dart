@@ -63,10 +63,12 @@ class _MyHomePageState extends State<MyHomePage> {
               });
             },
             itemBuilder: (context) => <PopupMenuItem<String>>[
-                  PopupMenuItem(value: 'Yaru-Cinnamon', child: const Text('Standard')),
+                  PopupMenuItem(
+                      value: 'Yaru-Cinnamon', child: const Text('Standard')),
                   PopupMenuItem(
                       value: 'Yaru-Cinnamon-light', child: const Text('Light')),
-                  PopupMenuItem(value: 'Yaru-Cinnamon-dark', child: const Text('Dark')),
+                  PopupMenuItem(
+                      value: 'Yaru-Cinnamon-dark', child: const Text('Dark')),
                 ]),
       ),
       body: Center(

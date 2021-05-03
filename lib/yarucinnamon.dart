@@ -132,12 +132,12 @@ final yarucinnamonAppBarDarkTheme = AppBarTheme(
 final yarucinnamonTheme = ThemeData(
     brightness: Brightness.light,
     primaryColor: yarucinnamonLightColorScheme.primary,
-    primaryColorBrightness:
-        ThemeData.estimateBrightnessForColor(yarucinnamonLightColorScheme.primary),
+    primaryColorBrightness: ThemeData.estimateBrightnessForColor(
+        yarucinnamonLightColorScheme.primary),
     canvasColor: yarucinnamonLightColorScheme.background,
     accentColor: yarucinnamonLightColorScheme.secondary,
-    accentColorBrightness:
-        ThemeData.estimateBrightnessForColor(yarucinnamonLightColorScheme.secondary),
+    accentColorBrightness: ThemeData.estimateBrightnessForColor(
+        yarucinnamonLightColorScheme.secondary),
     scaffoldBackgroundColor: yarucinnamonLightColorScheme.background,
     bottomAppBarColor: yarucinnamonLightColorScheme.surface,
     cardColor: yarucinnamonLightColorScheme.surface,
@@ -157,12 +157,12 @@ final yarucinnamonTheme = ThemeData(
 final yarucinnamonLightTheme = ThemeData(
     brightness: Brightness.light,
     primaryColor: yarucinnamonLightColorScheme.primary,
-    primaryColorBrightness:
-        ThemeData.estimateBrightnessForColor(yarucinnamonLightColorScheme.primary),
+    primaryColorBrightness: ThemeData.estimateBrightnessForColor(
+        yarucinnamonLightColorScheme.primary),
     canvasColor: yarucinnamonLightColorScheme.background,
     accentColor: yarucinnamonLightColorScheme.secondary,
-    accentColorBrightness:
-        ThemeData.estimateBrightnessForColor(yarucinnamonLightColorScheme.secondary),
+    accentColorBrightness: ThemeData.estimateBrightnessForColor(
+        yarucinnamonLightColorScheme.secondary),
     scaffoldBackgroundColor: yarucinnamonLightColorScheme.background,
     bottomAppBarColor: yarucinnamonLightColorScheme.surface,
     cardColor: yarucinnamonLightColorScheme.surface,
@@ -182,12 +182,12 @@ final yarucinnamonLightTheme = ThemeData(
 final yarucinnamonDarkTheme = ThemeData(
     brightness: Brightness.dark,
     primaryColor: yarucinnamonDarkColorScheme.primary,
-    primaryColorBrightness:
-        ThemeData.estimateBrightnessForColor(yarucinnamonDarkColorScheme.primary),
+    primaryColorBrightness: ThemeData.estimateBrightnessForColor(
+        yarucinnamonDarkColorScheme.primary),
     canvasColor: yarucinnamonDarkColorScheme.background,
     accentColor: yarucinnamonDarkColorScheme.secondary,
-    accentColorBrightness:
-        ThemeData.estimateBrightnessForColor(yarucinnamonDarkColorScheme.secondary),
+    accentColorBrightness: ThemeData.estimateBrightnessForColor(
+        yarucinnamonDarkColorScheme.secondary),
     scaffoldBackgroundColor: yarucinnamonDarkColorScheme.background,
     bottomAppBarColor: yarucinnamonDarkColorScheme.surface,
     cardColor: yarucinnamonDarkColorScheme.surface,
@@ -208,104 +208,104 @@ final yarucinnamonDarkTheme = ThemeData(
     primaryColorDark: yarucinnamonUbuntuOrange,
     appBarTheme: yarucinnamonAppBarDarkTheme);
 
-    // Special casing some widgets
-    // That are not catched with the default theming in flutter
-    // "Green" elevated Buttons
-    Color getElevatedButtonColorLight(Set<MaterialState> states) {
-      const Set<MaterialState> interactiveStates = <MaterialState>{
-        MaterialState.pressed,
-        MaterialState.hovered,
-        MaterialState.focused,
-      };
-      const Set<MaterialState> disabledStates = <MaterialState>{
-        MaterialState.disabled
-      };
-      if (states.any(interactiveStates.contains)) {
-        return yarucinnamonGreen;
-      } else if (states.any(disabledStates.contains)) {
-        return yarucinnamonWarmGrey;
-      }
-      return yarucinnamonGreen;
+// Special casing some widgets
+// That are not catched with the default theming in flutter
+// "Green" elevated Buttons
+Color getElevatedButtonColorLight(Set<MaterialState> states) {
+  const Set<MaterialState> interactiveStates = <MaterialState>{
+    MaterialState.pressed,
+    MaterialState.hovered,
+    MaterialState.focused,
+  };
+  const Set<MaterialState> disabledStates = <MaterialState>{
+    MaterialState.disabled
+  };
+  if (states.any(interactiveStates.contains)) {
+    return yarucinnamonGreen;
+  } else if (states.any(disabledStates.contains)) {
+    return yarucinnamonWarmGrey;
+  }
+  return yarucinnamonGreen;
+}
+
+Color getElevatedButtonColorDark(Set<MaterialState> states) {
+  const Set<MaterialState> interactiveStates = <MaterialState>{
+    MaterialState.pressed,
+    MaterialState.hovered,
+    MaterialState.focused,
+  };
+  const Set<MaterialState> disabledStates = <MaterialState>{
+    MaterialState.disabled
+  };
+  if (states.any(interactiveStates.contains)) {
+    return yarucinnamonGreen;
+  } else if (states.any(disabledStates.contains)) {
+    return yarucinnamonDisabledGreyDark;
+  }
+  return yarucinnamonGreen;
+}
+
+final elevatedButtonThemeDataLight = ElevatedButtonThemeData(
+    style: ButtonStyle(
+        backgroundColor:
+            MaterialStateProperty.resolveWith(getElevatedButtonColorLight)));
+
+final elevatedButtonThemeDataDark = ElevatedButtonThemeData(
+    style: ButtonStyle(
+        backgroundColor:
+            MaterialStateProperty.resolveWith(getElevatedButtonColorDark)));
+
+// Switches
+Color getSwitchThumbColorDark(Set<MaterialState> states) {
+  if (states.contains(MaterialState.disabled)) {
+    return yarucinnamonWarmGrey;
+  } else {
+    if (states.contains(MaterialState.selected)) {
+      return yarucinnamonMidAubergine;
+    } else {
+      return yarucinnamonWhite;
     }
+  }
+}
 
-    Color getElevatedButtonColorDark(Set<MaterialState> states) {
-      const Set<MaterialState> interactiveStates = <MaterialState>{
-        MaterialState.pressed,
-        MaterialState.hovered,
-        MaterialState.focused,
-      };
-      const Set<MaterialState> disabledStates = <MaterialState>{
-        MaterialState.disabled
-      };
-      if (states.any(interactiveStates.contains)) {
-        return yarucinnamonGreen;
-      } else if (states.any(disabledStates.contains)) {
-        return yarucinnamonDisabledGreyDark;
-      }
-      return yarucinnamonGreen;
-    }
-
-    final elevatedButtonThemeDataLight = ElevatedButtonThemeData(
-        style: ButtonStyle(
-            backgroundColor:
-                MaterialStateProperty.resolveWith(getElevatedButtonColorLight)));
-
-    final elevatedButtonThemeDataDark = ElevatedButtonThemeData(
-        style: ButtonStyle(
-            backgroundColor:
-                MaterialStateProperty.resolveWith(getElevatedButtonColorDark)));
-
-    // Switches
-    Color getSwitchThumbColorDark(Set<MaterialState> states) {
-      if (states.contains(MaterialState.disabled)) {
-        return yarucinnamonWarmGrey;
-      } else {
-        if (states.contains(MaterialState.selected)) {
-          return yarucinnamonMidAubergine;
-        } else {
-          return yarucinnamonWhite;
-        }
-      }
-    }
-
-    Color getSwitchTrackColorDark(Set<MaterialState> states) {
-      if (states.contains(MaterialState.disabled)) {
-        return yarucinnamonDisabledGreyDark;
-      } else {
-        if (states.contains(MaterialState.selected)) {
-          return yarucinnamonMidAubergineTransparentized;
-        } else {
-          return yarucinnamonWarmGrey;
-        }
-      }
-    }
-
-    final switchStyleDark = SwitchThemeData(
-        thumbColor: MaterialStateProperty.resolveWith(getSwitchThumbColorDark),
-        trackColor: MaterialStateProperty.resolveWith(getSwitchTrackColorDark));
-
-    // Checks
-    Color getCheckFillColorDark(Set<MaterialState> states) {
-      if (!states.contains(MaterialState.disabled)) {
-        if (states.contains(MaterialState.selected)) {
-          return yarucinnamonLightAubergine;
-        }
-        return yarucinnamonWarmGrey;
-      }
-      return yarucinnamonDisabledGreyDark;
-    }
-
-    Color getCheckColorDark(Set<MaterialState> states) {
-      if (!states.contains(MaterialState.disabled)) {
-        return yarucinnamonWhite;
-      }
+Color getSwitchTrackColorDark(Set<MaterialState> states) {
+  if (states.contains(MaterialState.disabled)) {
+    return yarucinnamonDisabledGreyDark;
+  } else {
+    if (states.contains(MaterialState.selected)) {
+      return yarucinnamonMidAubergineTransparentized;
+    } else {
       return yarucinnamonWarmGrey;
     }
+  }
+}
 
-    final checkStyle = CheckboxThemeData(
-        fillColor: MaterialStateProperty.resolveWith(getCheckFillColorDark),
-        checkColor: MaterialStateProperty.resolveWith(getCheckColorDark));
+final switchStyleDark = SwitchThemeData(
+    thumbColor: MaterialStateProperty.resolveWith(getSwitchThumbColorDark),
+    trackColor: MaterialStateProperty.resolveWith(getSwitchTrackColorDark));
 
-    // Radios
-    final radioStyle = RadioThemeData(
-        fillColor: MaterialStateProperty.resolveWith(getCheckFillColorDark));
+// Checks
+Color getCheckFillColorDark(Set<MaterialState> states) {
+  if (!states.contains(MaterialState.disabled)) {
+    if (states.contains(MaterialState.selected)) {
+      return yarucinnamonLightAubergine;
+    }
+    return yarucinnamonWarmGrey;
+  }
+  return yarucinnamonDisabledGreyDark;
+}
+
+Color getCheckColorDark(Set<MaterialState> states) {
+  if (!states.contains(MaterialState.disabled)) {
+    return yarucinnamonWhite;
+  }
+  return yarucinnamonWarmGrey;
+}
+
+final checkStyle = CheckboxThemeData(
+    fillColor: MaterialStateProperty.resolveWith(getCheckFillColorDark),
+    checkColor: MaterialStateProperty.resolveWith(getCheckColorDark));
+
+// Radios
+final radioStyle = RadioThemeData(
+    fillColor: MaterialStateProperty.resolveWith(getCheckFillColorDark));
