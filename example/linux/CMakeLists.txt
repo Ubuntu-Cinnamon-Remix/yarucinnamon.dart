@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 project(runner LANGUAGES CXX)
 
-set(BINARY_NAME "yarucinnamon_test")
-set(APPLICATION_ID "com.example.yarucinnamon_test")
+set(BINARY_NAME "yaru_test")
+set(APPLICATION_ID "com.example.yaru_test")
 
 cmake_policy(SET CMP0063 NEW)
 

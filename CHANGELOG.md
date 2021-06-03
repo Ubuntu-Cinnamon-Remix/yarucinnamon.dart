@@ -1,8 +1,8 @@
 # Changelog
 
-## 0.0.0-dev
-
-* Initial prerelease
+## 0.0.0-dev.10
+* [Joshua Peisach](https://github.com/ItzSwirlz)
+  * Rebase project off of new ubuntus yaru.dart upstream rebase
 
 ## 0.0.0-dev.9
 
@@ -49,7 +49,11 @@
   * Added example that demonstrates all of the styles
   * bump version to 0.0.0-dev.8 for release
   * Updated README
-  * Full url to screenshot, should fix pub.dev/packages/yaru
+  * Full url to screenshot, should fix pub.dev/packages/yarucinnamon
   * Updated description and homepage to reflect github move
   * Re-license under MPL-2.0 to reduce the barrier for use by * Flutter developers.
   * Releasing 0.0.0-dev.4
+
+## 0.0.0-dev
+
+* Initial prerelease
