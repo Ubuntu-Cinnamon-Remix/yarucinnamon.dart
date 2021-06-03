@@ -12,7 +12,9 @@ class ColorsView extends StatelessWidget {
         const SizedBox(height: 15.0),
         Row(
           children: [
-            Expanded(child: colorPaletteExample('orange', yarucinnamon.Colors.orange)),
+            Expanded(
+                child:
+                    colorPaletteExample('orange', yarucinnamon.Colors.orange)),
             SizedBox(width: 25.0),
             Expanded(
                 child: colorPaletteExample(
@@ -27,15 +29,16 @@ class ColorsView extends StatelessWidget {
         Row(
           children: [
             Expanded(
-                child: colorPaletteExample(
-                    'canonicalAubergine', yarucinnamon.Colors.canonicalAubergine)),
+                child: colorPaletteExample('canonicalAubergine',
+                    yarucinnamon.Colors.canonicalAubergine)),
             SizedBox(width: 25.0),
             Expanded(
                 child: colorPaletteExample(
                     'darkAubergine', yarucinnamon.Colors.darkAubergine)),
             SizedBox(width: 25.0),
             Expanded(
-                child: colorPaletteExample('warmGrey', yarucinnamon.Colors.warmGrey)),
+                child: colorPaletteExample(
+                    'warmGrey', yarucinnamon.Colors.warmGrey)),
           ],
         ),
       ],
